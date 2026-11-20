@@ -1,0 +1,17 @@
+{% extends 'teams/base.html' %}
+
+{% block title %}All Teams{% endblock %}
+
+{% block content %}
+    <h1>Our Teams</h1>
+    <p class="muted">Choose a team to learn more about its work and members.</p>
+    {% for slug, team in teams %}
+        <section class="card">
+            <h2>{{ team.name }}</h2>
+            <p>{{ team.description }}</p>
+            <a class="team-link" href="{% url 'teams:team_detail' team_slug=slug %}">View {{ team.name }}</a>
+        </section>
+    {% empty %}
+        <p>No teams have been added yet.</p>
+    {% endfor %}
+{% endblock %}

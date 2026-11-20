@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Our Teams{% endblock %}</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { margin: 0; font-family: Arial, sans-serif; background: #f3f5f9; color: #202638; }
+        header { background: #18233b; color: white; padding: 1.25rem max(1.5rem, calc((100% - 960px) / 2)); }
+        header a { color: white; text-decoration: none; font-weight: bold; }
+        main { width: min(960px, calc(100% - 2rem)); margin: 2.5rem auto; }
+        .card { background: white; border-radius: 14px; padding: 1.5rem; margin: 1rem 0; box-shadow: 0 5px 20px #17233b12; }
+        a { color: #315fbd; }
+        .team-link { display: inline-block; margin-top: .5rem; font-weight: bold; }
+        .muted { color: #64708a; }
+        footer { text-align: center; color: #778097; padding: 2rem; }
+    </style>
+</head>
+<body>
+    <header><a href="{% url 'teams:team_list' %}">Team Directory</a></header>
+    <main>{% block content %}{% endblock %}</main>
+    <footer>Team Directory</footer>
+</body>
+</html>
